@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="900"
-        Width="1024" Height="600"
+        Width="1024" Height="650"
         x:Class="Avalonia_design.MainWindow"
         Title="Avalonia_design">
 
@@ -31,12 +31,12 @@
                                         <StackPanel Spacing="5">
                                                 <TextBlock Text="Головна" Foreground="White" FontSize="24" FontWeight="Bold"/>
                                                 <TextBlock Text="Огляд стану вашого розумного будинку" Foreground="Gray" FontSize="14"/>
-                                                        <UniformGrid Columns="8" Margin="0,10,0,0">
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                        </UniformGrid>
+                                                <UniformGrid Columns="8" Margin="0,10,0,0">
+                                                        <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
+                                                        <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
+                                                        <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
+                                                        <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
+                                                </UniformGrid>
                                         </StackPanel>
 
                                         <StackPanel Spacing="10">
