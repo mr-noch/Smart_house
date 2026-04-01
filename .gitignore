@@ -1,0 +1,107 @@
+# Visual Studio 2015+
+.vs/
+
+# Visual Studio 2013
+.suo
+.user
+.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# Packages
+*.nupkg
+*.snupkg
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Resharper
+.resharper/
+*.DotSettings
+
+# NCrunch
+_NCrunch_*
+
+# StyleCop
+StyleCop.Cache
+
+# Test results
+TestResults/
+
+# NuGet
+packages/
+*.nuget.props
+
+# Node.js (if your project uses it, e.g., for frontend)
+node_modules/
+
+# Azure Tools
+.publish/
+
+# SQL Server Management Studio
+*.ssmssln
+*.mdf
+*.ldf
+
+# Local settings
+*.local
+
+# User-specific files
+*.user
+
+# Log files
+*.log
+
+# Temporary files
+*.~
+*.tmp
+
+# Editor backup files
+*#
+
+# Windows thumbnail cache
+Thumbs.db
+
+# macOS system files
+.DS_Store
+
+# Git specific
+.gitattributes
+.gitkeep
+
+# Other common files
+*.bak
+*.swp
+
+# Azure Functions
+host.json
+local.settings.json
+
+# Docker
+Dockerfile.develop
+
+# DotNet CLI
+.config/
+
+# Generated files from tools like T4 templates
+*.tt
+*.cs.t4
+
+# Example of ignoring specific files that might contain sensitive data (use with caution)
+# appsettings.Development.json
+# appsettings.Production.json
+
+# Example of ignoring specific directories
+# MyProject/bin/
+# MyProject/obj/
