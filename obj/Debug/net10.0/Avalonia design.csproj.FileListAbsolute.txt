@@ -1,0 +1,81 @@
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia design
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia design.deps.json
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia design.runtimeconfig.json
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia design.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia design.pdb
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Base.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Controls.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.DesignerSupport.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Dialogs.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Markup.Xaml.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Markup.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Metal.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.MicroCom.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.OpenGL.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Vulkan.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Controls.ColorPicker.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Desktop.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Diagnostics.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Fonts.Inter.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.FreeDesktop.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Native.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Remote.Protocol.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Skia.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Themes.Fluent.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Themes.Simple.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Win32.Automation.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Win32.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.X11.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/HarfBuzzSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/MicroCom.Runtime.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/SkiaSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Tmds.DBus.Protocol.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-arm64/native/av_libglesv2.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-x64/native/av_libglesv2.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-x86/native/av_libglesv2.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/osx/native/libAvaloniaNative.dylib
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-arm/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-arm64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-loongarch64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-musl-arm/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-musl-arm64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-musl-loongarch64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-musl-riscv64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-riscv64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-x64/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-x86/native/libHarfBuzzSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-arm/native/libSkiaSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-arm64/native/libSkiaSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-musl-x64/native/libSkiaSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/linux-x64/native/libSkiaSharp.so
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/osx/native/libSkiaSharp.dylib
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-x64/native/libSkiaSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/runtimes/win-x86/native/libSkiaSharp.dll
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.csproj.AssemblyReference.cache
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia/Resources.Inputs.cache
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia/resources
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.GeneratedMSBuildEditorConfig.editorconfig
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.AssemblyInfoInputs.cache
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.AssemblyInfo.cs
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.csproj.CoreCompileInputs.cache
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia.74A9A71D.Up2Date
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.dll
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/refint/Avalonia design.dll
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.pdb
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/Avalonia design.genruntimeconfig.cache
+/home/noch/VS_Code/Avalonia design/obj/Debug/net10.0/ref/Avalonia design.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Avalonia.Svg.Skia.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/ExCSS.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/ShimSkiaSharp.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/SkiaSharp.HarfBuzz.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Svg.Custom.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Svg.Model.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Svg.Skia.dll
+/home/noch/VS_Code/Avalonia design/bin/Debug/net10.0/Fizzler.dll
