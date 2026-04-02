@@ -1,7 +1,9 @@
-using Smart_house.models;
-using SmartHouseUI;
+using SmartHouseUI.Models;
+using SmartHouseUI.Interfaces;
 using System;
 using System.Collections.Generic;
+
+namespace SmartHouseUI.Collections;
 
 public class DeviceCollection : IRepository<Device>
 {

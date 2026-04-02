@@ -1,4 +1,4 @@
-namespace SmartHouseUI;
+namespace SmartHouseUI.Interfaces;
 
 public interface IRepository<T>
 {

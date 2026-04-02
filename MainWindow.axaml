@@ -4,8 +4,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="900"
         Width="1024" Height="600"
-        x:Class="Avalonia_design.MainWindow"
-        Title="Avalonia_design">
+        x:Class="SmartHouseUI.MainWindow"
+        Title="SmartHouseUI">
 
         <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="200,*">
 

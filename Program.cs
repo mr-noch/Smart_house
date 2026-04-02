@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace Avalonia_design;
+namespace SmartHouseUI;
 
 class Program
 {
