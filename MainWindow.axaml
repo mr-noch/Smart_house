@@ -5,7 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="900"
         Width="1024" Height="600"
         x:Class="SmartHouseUI.MainWindow"
-        Title="SmartHouseUI">
+        Title="SmartHouseUI"
+        WindowStartupLocation="CenterScreen">
 
         <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="200,*">
 

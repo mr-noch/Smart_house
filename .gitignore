@@ -97,7 +97,6 @@ Dockerfile.develop
 # Generated files from tools like T4 templates
 *.tt
 *.cs.t4
-
 # Example of ignoring specific files that might contain sensitive data (use with caution)
 # appsettings.Development.json
 # appsettings.Production.json
@@ -105,3 +104,6 @@ Dockerfile.develop
 # Example of ignoring specific directories
 # MyProject/bin/
 # MyProject/obj/
+bin/
+obj/
+Ignore/
