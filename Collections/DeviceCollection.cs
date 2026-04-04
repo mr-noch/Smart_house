@@ -42,5 +42,5 @@ public class DeviceCollection : IRepository<Device>
             }
         }
         return -1;
-    }
+    } 
 }

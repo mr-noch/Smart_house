@@ -2,9 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="624" d:DesignHeight="600"
+        mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         Width="1024" Height="600"
-        x:Class="SmartHouseUI.LoginWindow"
+        x:Class="SmartHouseUI.GuiLogic.LoginWindow"
         Title="SmartHouseUI"
         WindowStartupLocation="CenterScreen">
 
@@ -14,20 +14,21 @@
 
             <Grid RowDefinitions="*, 400, *">
                 <Border BorderBrush="white" BorderThickness="1" CornerRadius="30" Background="" Grid.Row="1" Padding="10" >
-                    
+
                     <StackPanel>
                         <Image Source="/Assets/Image/logo.png" Height="100" Width="100"/>
                         <TextBlock Text="Welcome" Foreground="white" HorizontalAlignment="Center" Height="20" Width="60"/>
 
                         <TextBlock Text="Email address" Foreground="Gray" FontSize="8" Margin="0,10,0,5"/>
-                        <TextBox Name="UserEmailAddress" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1"/>
+                        <TextBox x:Name="EmailInput" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1"/>
 
                         <TextBlock Text="Password" Foreground="Gray" FontSize="8" Margin="0,10,0,5"/>
-                        <TextBox Name="PasswordField" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1"/>
+                        <TextBox x:Name="PasswordInput" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1"/>
 
                         <Button Content="Forgot your password?" Background="Transparent" Foreground="Gray" FontSize="8" />
 
                         <Button Click="OnLoginClick" Content="Login" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" FontSize="14" Background="Transparent" BorderBrush="white" BorderThickness="1" Margin="0,10,0,0" />
+                        <Button Content="Don't you have an account?" Click="SignUpWindowButton_Click" Background="Transparent" Foreground="Gray" FontSize="8" />
 
                     </StackPanel>
                 </Border>

@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace SmartHouseUI;
+namespace SmartHouseUI.GuiLogic;
 
 class Program
 {
