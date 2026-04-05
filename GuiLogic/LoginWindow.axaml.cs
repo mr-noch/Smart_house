@@ -13,6 +13,9 @@ public partial class LoginWindow : Window
         InitializeComponent();
     }
     private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
+
+
+    
     private void OnLoginClick(object sender, RoutedEventArgs e)
     {
         var emailInput = this.FindControl<TextBox>("EmailInput");
@@ -27,9 +30,9 @@ public partial class LoginWindow : Window
             return;
 
         authService.LogIn(email, password);
-        // var nextWindow = new MainWindow();
-        // nextWindow.Show();
-        // this.Close();
+        var nextWindow = new MainWindow();
+        nextWindow.Show();
+        this.Close();
     }
     private void SignUpWindowButton_Click(object sender, RoutedEventArgs e)
     {

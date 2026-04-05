@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SmartHouseUI.GuiLogic.AddRoomPanel">
+
+    <Border Background="#2d2d30" Width="250" Padding="20">
+        <StackPanel Spacing="15">
+            <TextBlock Text="Додати кімнату" FontSize="18" Foreground="White" FontWeight="Bold"/>
+
+            <TextBox x:Name="RoomNameInput" Watermark="Назва кімнати..."/>
+
+            <StackPanel Spacing="5">
+                <TextBlock Text="Тип кімнати:" FontSize="12" Foreground="Gray"/>
+                <ComboBox x:Name="TypeComboBox" HorizontalAlignment="Stretch">
+                </ComboBox>
+            </StackPanel>
+
+            <Button Content="Додати кімнату"  HorizontalAlignment="Stretch" Background="LightGray" Click="AddRoom"/>
+        </StackPanel>
+
+    </Border>
+</UserControl>
