@@ -8,9 +8,9 @@ public class Device
 {
     public int Id { get; set; }
     public string? Name { get; set; }
-    public string? Type { get; set; }
+    public DeviceType Type { get; set; }
     public bool IsOn { get; set; }
-    public string? RoomType { get; set; }
+    public RoomType RoomType { get; set; }
 
 
     public virtual void TurnOn()

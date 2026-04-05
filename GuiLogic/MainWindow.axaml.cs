@@ -55,7 +55,7 @@ public partial class MainWindow : Window
 
         grid.Children.Clear(); // Clear existing cards
 
-        foreach (var name in rooms)
+        foreach (var room in rooms)
         {
             var textGroup = new StackPanel
             {
@@ -65,7 +65,7 @@ public partial class MainWindow : Window
 
             var nameLabel = new TextBlock
             {
-                Text = name.Name,
+                Text = room.Name,
                 Foreground = Brushes.White,
                 FontSize = 14,
                 FontWeight = FontWeight.Bold,
@@ -74,7 +74,7 @@ public partial class MainWindow : Window
 
             var descLabel = new TextBlock
             {
-                Text = name.Type.ToString(),
+                Text = room.Type.ToString(),
                 Foreground = Brushes.Gray,
                 FontSize = 10,
                 HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
@@ -83,16 +83,53 @@ public partial class MainWindow : Window
             textGroup.Children.Add(nameLabel);
             textGroup.Children.Add(descLabel);
 
+            // Delete button
+            var deleteButton = new Button
+            {
+                Foreground = Brushes.White,
+                Background = Brush.Parse("#e74c3c"),
+                FontSize = 20,
+                Padding = new Thickness(0),
+                Width = 24,
+                Height = 24,
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Right,
+                VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top,
+                CornerRadius = new CornerRadius(50),
+                Margin = new Thickness(2)
+            };
+
+            deleteButton.Click += (sender, e) => DeleteRoom(room);
+
+            // Container for room info and delete button
+            var cardContent = new Grid();
+            cardContent.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Star));
+            cardContent.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Auto));
+            cardContent.Children.Add(textGroup);
+            cardContent.Children.Add(deleteButton);
+            Grid.SetColumn(textGroup, 0);
+            Grid.SetColumn(deleteButton, 1);
+
             var roomCard = new Border
             {
                 Background = Brush.Parse("#252526"),
-                Width = 110, // Можна трохи розширити, щоб вліз опис
+                Width = 130,
                 Height = 100,
                 CornerRadius = new CornerRadius(12),
                 Margin = new Thickness(10),
-                Child = textGroup // <--- Ось тут ми вставили панель з усіма текстами
+                Padding = new Thickness(8),
+                Child = cardContent
             };
             grid.Children.Add(roomCard);
+        }
+    }
+
+    private void DeleteRoom(Room room)
+    {
+        var user = UserSession.CurrentUser;
+        if (user != null)
+        {
+            user.Rooms.Remove(room);
+            RenderRoomsFromList(user.Rooms);
         }
     }
     public void LogOut(object sender, RoutedEventArgs e)
