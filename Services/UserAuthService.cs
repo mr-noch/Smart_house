@@ -58,11 +58,10 @@ public class UserAuthService
         {
             UserSession.CurrentUser = user;
 
-            System.Console.WriteLine($"User: {user.Name} залогінився. Сесія відкрита.");
+            System.Console.WriteLine($"User: {user.Name} залогінився");
             return true;
         }
 
-        // 4. Якщо не знайшли — повертаємо false
         System.Console.WriteLine("Помилка входу: невірний Email або пароль.");
         return false;
     }

@@ -27,6 +27,6 @@ public enum DeviceType
     Light,
     Thermostat,
     Camera,
-    Sensor,
-    DoorLock
+    // Sensor,
+    // DoorLock
 }

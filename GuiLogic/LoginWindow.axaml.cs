@@ -23,8 +23,8 @@ public partial class LoginWindow : Window
 
         if (emailInput == null || passwordInput == null) return;
 
-        string email = emailInput.Text;
-        string password = passwordInput.Text;
+        string? email = emailInput.Text;
+        string? password = passwordInput.Text;
 
         if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             return;

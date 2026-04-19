@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using System.Collections.Generic;
+using System.Linq;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
 using SmartHouseUI.Services;
@@ -53,7 +54,7 @@ public partial class MainWindow : Window
         var grid = this.FindControl<UniformGrid>("RoomsGrid");
         if (grid == null) return;
 
-        grid.Children.Clear(); // Clear existing cards
+        grid.Children.Clear();
 
         foreach (var room in rooms)
         {
@@ -83,7 +84,6 @@ public partial class MainWindow : Window
             textGroup.Children.Add(nameLabel);
             textGroup.Children.Add(descLabel);
 
-            // Delete button
             var deleteButton = new Button
             {
                 Foreground = Brushes.White,
@@ -100,22 +100,42 @@ public partial class MainWindow : Window
 
             deleteButton.Click += (sender, e) => DeleteRoom(room);
 
-            // Container for room info and delete button
+            var manageDevicesButton = new Button
+            {
+                Content = "Пристрої",
+                Foreground = Brushes.White,
+                Background = Brush.Parse("#2d89ef"),
+                FontSize = 12,
+                CornerRadius = new CornerRadius(8),
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch,
+                Margin = new Thickness(0, 8, 0, 0)
+            };
+            manageDevicesButton.Click += (sender, e) => OpenDevicePanel(room);
+
             var cardContent = new Grid();
+            cardContent.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+            cardContent.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+            cardContent.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
             cardContent.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Star));
             cardContent.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Auto));
+
             cardContent.Children.Add(textGroup);
             cardContent.Children.Add(deleteButton);
+            cardContent.Children.Add(manageDevicesButton);
             Grid.SetColumn(textGroup, 0);
             Grid.SetColumn(deleteButton, 1);
+            Grid.SetRow(deleteButton, 0);
+            Grid.SetRow(textGroup, 0);
+            Grid.SetRow(manageDevicesButton, 2);
+            Grid.SetColumnSpan(manageDevicesButton, 2);
 
             var roomCard = new Border
             {
                 Background = Brush.Parse("#252526"),
-                Width = 130,
-                Height = 100,
+                Width = 150,
+                Height = 130,
                 CornerRadius = new CornerRadius(12),
-                Margin = new Thickness(10),
+                Margin = new Thickness(15),
                 Padding = new Thickness(8),
                 Child = cardContent
             };
@@ -132,6 +152,13 @@ public partial class MainWindow : Window
             RenderRoomsFromList(user.Rooms);
         }
     }
+
+    private void OpenDevicePanel(Room room)
+    {
+        var panel = this.FindControl<RoomDevicesPanel>("RoomDevicesPanelControl");
+        panel?.Open(room);
+    }
+
     public void LogOut(object sender, RoutedEventArgs e)
     {
         UserSession.Logout();

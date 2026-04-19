@@ -35,26 +35,26 @@
                                                         <TextBlock Text="Головна" Foreground="White" FontSize="24" FontWeight="Bold"/>
                                                         <TextBlock Text="Огляд стану вашого розумного будинку" Foreground="Gray" FontSize="14"/>
                                                         <Button Content="Додати кімнату" Click="AddRoom" Foreground="white" />
-                                                        <UniformGrid Grid.Row="1" x:Name="RoomsGrid" Columns="6" Margin="20"/>
+                                                        <UniformGrid Grid.Row="1" x:Name="RoomsGrid" Columns="5" Margin="20"/>
                                                 </StackPanel>
 
                                                 <StackPanel Spacing="10">
                                                         <TextBlock Text="Швидке керування" Foreground="White" FontSize="18"/>
                                                         <UniformGrid Columns="4">
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"  />
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"/>
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"/>
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"/>
                                                         </UniformGrid>
                                                 </StackPanel>
 
                                                 <StackPanel Spacing="10">
                                                         <TextBlock Text="Сценарії" Foreground="White" FontSize="18"/>
                                                         <UniformGrid Columns="4">
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
-                                                                <Border Background="#252526" Height="100" CornerRadius="12" Margin="5"/>
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"/>
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"/>
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"/>
+                                                                <Border Background="rgb(49, 55, 97)" Height="100" CornerRadius="12" Margin="5"/>
                                                         </UniformGrid>
                                                 </StackPanel>
 
@@ -91,5 +91,6 @@
                 </Grid>
 
                 <local:AddRoomPanel x:Name="AddRoomPanelControl" IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <local:RoomDevicesPanel x:Name="RoomDevicesPanelControl" IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
 </Window>
