@@ -7,6 +7,7 @@ using System.Linq;
 using System.Collections.Generic;
 using SmartHouseUI.GuiLogic;
 using Avalonia;
+using System.Text.RegularExpressions;
 
 namespace SmartHouseUI.GuiLogic;
 
@@ -15,32 +16,57 @@ public partial class AddRoomPanel : UserControl
     public AddRoomPanel()
     {
         InitializeComponent();
-
-        // Заповнюємо ComboBox значеннями з enum
         var typeBox = this.FindControl<ComboBox>("TypeComboBox");
         if (typeBox != null)
         {
             typeBox.ItemsSource = Enum.GetValues(typeof(RoomType));
-            typeBox.SelectedIndex = 0; // Вибираємо перший елемент за замовчуванням
+            typeBox.SelectedIndex = 0;
         }
     }
 
     private void AddRoom(object sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         string name = this.FindControl<TextBox>("RoomNameInput")?.Text ?? "";
-
-        // Отримуємо вибраний тип
         var typeBox = this.FindControl<ComboBox>("TypeComboBox");
+        var errorText = this.FindControl<TextBlock>("ErrorText");
+
+        if (errorText == null) return;
+
         RoomType selectedType = (RoomType)(typeBox?.SelectedItem ?? RoomType.LivingRoom);
 
-        var user = UserSession.CurrentUser;
-        if (user != null && !string.IsNullOrWhiteSpace(name))
+        // Validation
+        string validationError = ValidateRoomName(name);
+        if (!string.IsNullOrEmpty(validationError))
         {
-            user.Rooms.Add(new Room { Name = name, Type = selectedType });
-            // Update UI
+            errorText.Text = validationError;
+            return;
+        }
+
+        errorText.Text = "";
+
+        var activeHouse = UserSession.ActiveHouse;
+        if (activeHouse != null && !string.IsNullOrWhiteSpace(name))
+        {
+            activeHouse.Rooms.Add(new Room { Name = name, Type = selectedType });
+            UserAuthService.SaveAllUsers();
+
             var mainWindow = this.Parent?.Parent as MainWindow;
-            mainWindow?.RenderRoomsFromList(user.Rooms);
+            mainWindow?.RenderRoomsFromList(activeHouse.Rooms);
         }
         this.IsVisible = false;
+    }
+
+    private string ValidateRoomName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return "Назва кімнати не може бути порожньою.";
+
+        if (name.Length < 2 || name.Length > 50)
+            return "Назва кімнати повинна бути від 2 до 50 символів.";
+
+        if (!Regex.IsMatch(name, @"^[a-zA-Zа-яА-ЯіІїЇєЄ0-9\s\-_]+$"))
+            return "Назва кімнати може містити тільки букви, цифри, пробіли, дефіси та підкреслення.";
+
+        return "";
     }
 }

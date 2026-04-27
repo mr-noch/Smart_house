@@ -1,0 +1,105 @@
+[
+  {
+    "Id": 1,
+    "Name": "aefwef",
+    "Role": "Admin",
+    "Email": "1@a.com",
+    "Password": "123123",
+    "Rooms": [
+      {
+        "Name": "LivingRoom",
+        "Type": "LivingRoom",
+        "Devices": [
+          {
+            "$type": "Camera",
+            "Resolution": "1080p",
+            "StoragePath": "videos/",
+            "IsRecording": false,
+            "Id": 3,
+            "Name": "wr",
+            "Type": "Camera",
+            "IsOn": false,
+            "RoomType": "LivingRoom"
+          }
+        ]
+      },
+      {
+        "Name": "Kitchen",
+        "Type": "Kitchen",
+        "Devices": []
+      },
+      {
+        "Name": "Bedroom",
+        "Type": "Bedroom",
+        "Devices": [
+          {
+            "$type": "Thermostat",
+            "CurrentTemperature": 20,
+            "TargetTemperature": 22,
+            "Mode": "Off",
+            "Id": 1,
+            "Name": "ssdd",
+            "Type": "Thermostat",
+            "IsOn": false,
+            "RoomType": "Bedroom"
+          }
+        ]
+      }
+    ],
+    "AccessOwnerIds": []
+  },
+  {
+    "Id": 2,
+    "Name": "іалтоа",
+    "Role": "Admin",
+    "Email": "2@a.com",
+    "Password": "121212",
+    "Rooms": [
+      {
+        "Name": "LivingRoom",
+        "Type": "LivingRoom",
+        "Devices": []
+      },
+      {
+        "Name": "Kitchen",
+        "Type": "Kitchen",
+        "Devices": []
+      },
+      {
+        "Name": "Bedroom",
+        "Type": "Bedroom",
+        "Devices": []
+      }
+    ],
+    "AccessOwnerIds": [
+      1
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "dk",
+    "Role": "Admin",
+    "Email": "3@gmail.com",
+    "Password": "121212",
+    "Rooms": [
+      {
+        "Name": "LivingRoom",
+        "Type": "LivingRoom",
+        "Devices": []
+      },
+      {
+        "Name": "Kitchen",
+        "Type": "Kitchen",
+        "Devices": []
+      },
+      {
+        "Name": "Bedroom",
+        "Type": "Bedroom",
+        "Devices": []
+      }
+    ],
+    "AccessOwnerIds": [
+      1
+    ]
+  }
+]

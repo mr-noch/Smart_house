@@ -15,6 +15,7 @@
             </StackPanel>
 
             <Button Content="Додати кімнату"  HorizontalAlignment="Stretch" Background="LightGray" Click="AddRoom"/>
+            <TextBlock x:Name="ErrorText" Foreground="OrangeRed" FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
         </StackPanel>
 
     </Border>

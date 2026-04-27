@@ -1,83 +1,26 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
-using SmartHouseUI.Services;
 using SmartHouseUI.Models;
+using SmartHouseUI.Services;
 using Avalonia.Media;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace SmartHouseUI.GuiLogic;
 
-public partial class LoginWindow : Window
+public partial class ChooseHouse : Window
 {
-    private UserAuthService authService = new UserAuthService();
+    private readonly UserAuthService _authService = new UserAuthService();
 
-    public LoginWindow()
+    public ChooseHouse()
     {
         InitializeComponent();
+        RenderHouseOptions();
+        ConfigureGrantAccessPanel();
     }
 
     private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
-
-    private void OnLoginClick(object sender, RoutedEventArgs e)
-    {
-        var emailInput = this.FindControl<TextBox>("EmailInput");
-        var passwordInput = this.FindControl<TextBox>("PasswordInput");
-        var errorText = this.FindControl<TextBlock>("ErrorText");
-
-        if (emailInput == null || passwordInput == null || errorText == null) return;
-
-        string? email = emailInput.Text?.Trim();
-        string? password = passwordInput.Text?.Trim();
-
-        string validationError = ValidateLogin(email, password);
-        if (!string.IsNullOrEmpty(validationError))
-        {
-            errorText.Text = validationError;
-            return;
-        }
-
-        errorText.Text = "";
-
-        if (!authService.LogIn(email, password))
-        {
-            errorText.Text = "Невірний email або пароль.";
-            return;
-        }
-
-        ShowChooseHousePanel();
-    }
-
-    private void SignUpWindowButton_Click(object sender, RoutedEventArgs e)
-    {
-        var nextWindow = new SignUpWindow();
-        nextWindow.Show();
-        this.Close();
-    }
-
-    private void OnForgotPasswordClick(object sender, RoutedEventArgs e)
-    {
-        var changePasswordWindow = new ChangePassword();
-        changePasswordWindow.Show();
-        this.Close();
-    }
-
-    private void ShowChooseHousePanel()
-    {
-        var loginPanel = this.FindControl<Grid>("LoginPanel");
-        var chooseHousePanel = this.FindControl<Border>("ChooseHousePanel");
-
-        if (loginPanel != null)
-            loginPanel.IsVisible = false;
-
-        if (chooseHousePanel != null)
-        {
-            chooseHousePanel.IsVisible = true;
-            RenderHouseOptions();
-            ConfigureGrantAccessPanel();
-        }
-    }
 
     private void RenderHouseOptions()
     {
@@ -105,7 +48,7 @@ public partial class LoginWindow : Window
 
             foreach (var ownerId in currentUser.AccessOwnerIds)
             {
-                var owner = authService.GetUserById(ownerId);
+                var owner = _authService.GetUserById(ownerId);
                 if (owner == null)
                     continue;
 
@@ -165,6 +108,8 @@ public partial class LoginWindow : Window
             return;
 
         string email = emailInput.Text?.Trim() ?? string.Empty;
+
+        // Validation
         string validationError = ValidateEmail(email);
         if (!string.IsNullOrEmpty(validationError))
         {
@@ -173,7 +118,7 @@ public partial class LoginWindow : Window
             return;
         }
 
-        var targetUser = authService.GetUserByEmail(email);
+        var targetUser = _authService.GetUserByEmail(email);
         if (targetUser == null)
         {
             statusText.Foreground = Brushes.OrangeRed;
@@ -188,31 +133,16 @@ public partial class LoginWindow : Window
             return;
         }
 
-        if (authService.GrantHouseAccess(currentUser.Id, email))
+        if (_authService.GrantHouseAccess(currentUser.Id, email))
         {
             statusText.Foreground = Brushes.LightGreen;
             statusText.Text = $"Доступ надано користувачу {targetUser.Name}.";
-            RenderHouseOptions();
         }
         else
         {
             statusText.Foreground = Brushes.OrangeRed;
             statusText.Text = "Доступ вже надано або сталася помилка.";
         }
-    }
-
-    private string ValidateLogin(string? email, string? password)
-    {
-        if (string.IsNullOrWhiteSpace(email))
-            return "Email не може бути порожнім.";
-
-        if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-            return "Невірний формат email.";
-
-        if (string.IsNullOrWhiteSpace(password))
-            return "Пароль не може бути порожнім.";
-
-        return "";
     }
 
     private string ValidateEmail(string email)

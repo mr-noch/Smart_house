@@ -33,6 +33,7 @@
 
                                                 <StackPanel Spacing="5">
                                                         <TextBlock Text="Головна" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                                                        <TextBlock x:Name="HouseOwnerText" Text="Ваш будинок" Foreground="LightGray" FontSize="14"/>
                                                         <TextBlock Text="Огляд стану вашого розумного будинку" Foreground="Gray" FontSize="14"/>
                                                         <Button Content="Додати кімнату" Click="AddRoom" Foreground="white" />
                                                         <UniformGrid Grid.Row="1" x:Name="RoomsGrid" Columns="5" Margin="20"/>

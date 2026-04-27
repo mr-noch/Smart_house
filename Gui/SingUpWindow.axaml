@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
 
 
-    <Grid Background="{DynamicResource PrimaryBackgroundGradient}" ColumnDefinitions="*, 300,*">
+    <Grid Background="{DynamicResource PrimaryBackgroundGradient}" ColumnDefinitions="*, 500,*">
         <Border Grid.Column="1" CornerRadius="12" Margin="20" Padding="20">
 
             <Grid RowDefinitions="*, 400, *">
@@ -30,6 +30,7 @@
                         <TextBox x:Name="PasswordInput" Name="PasswordField" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1"/>
 
                         <Button Click="OnSignUpClick" Content="Sign Up" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" FontSize="14" Background="Transparent" BorderBrush="white" BorderThickness="1" Margin="0,22,0,0" />
+                        <TextBlock x:Name="ErrorText" Foreground="OrangeRed" FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                         <Button Content="Do you have an account?" Click="LoginWindowButton_Click" Background="Transparent" Foreground="Gray" FontSize="8" />
 
                     </StackPanel>

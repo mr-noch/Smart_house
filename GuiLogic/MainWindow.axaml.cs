@@ -17,24 +17,31 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         LoadRooms();
-        var user = UserSession.CurrentUser;
-        if (user != null)
+        var activeHouse = UserSession.ActiveHouse;
+        if (activeHouse != null)
         {
-            RenderRoomsFromList(user.Rooms);
+            RenderRoomsFromList(activeHouse.Rooms);
+            var headerText = this.FindControl<TextBlock>("HouseOwnerText");
+            if (headerText != null)
+            {
+                headerText.Text = activeHouse.Id == UserSession.CurrentUser?.Id
+                    ? "Ваш будинок"
+                    : $"Будинок користувача {activeHouse.Name}";
+            }
         }
     }
 
     private void LoadRooms()
     {
-        var user = UserSession.CurrentUser;
+        var activeHouse = UserSession.ActiveHouse;
 
-        if (user != null)
+        if (activeHouse != null)
         {
             var roomsControl = this.FindControl<ItemsControl>("RoomsControl");
 
             if (roomsControl != null)
             {
-                roomsControl.ItemsSource = user.Rooms;
+                roomsControl.ItemsSource = activeHouse.Rooms;
             }
         }
     }
@@ -61,7 +68,9 @@ public partial class MainWindow : Window
             var textGroup = new StackPanel
             {
                 VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center,
-                Spacing = 4
+                Spacing = 4,
+
+
             };
 
             var nameLabel = new TextBlock
@@ -88,7 +97,7 @@ public partial class MainWindow : Window
             {
                 Foreground = Brushes.White,
                 Background = Brush.Parse("#e74c3c"),
-                FontSize = 20,
+                FontSize = 30,
                 Padding = new Thickness(0),
                 Width = 24,
                 Height = 24,
@@ -131,7 +140,7 @@ public partial class MainWindow : Window
 
             var roomCard = new Border
             {
-                Background = Brush.Parse("#252526"),
+                Background = Brush.Parse("rgb(49, 55, 97)"),
                 Width = 150,
                 Height = 130,
                 CornerRadius = new CornerRadius(12),
@@ -145,12 +154,13 @@ public partial class MainWindow : Window
 
     private void DeleteRoom(Room room)
     {
-        var user = UserSession.CurrentUser;
-        if (user != null)
+        var activeHouse = UserSession.ActiveHouse;
+        if (activeHouse != null)
         {
-            user.Rooms.Remove(room);
-            RenderRoomsFromList(user.Rooms);
+            activeHouse.Rooms.Remove(room);
+            RenderRoomsFromList(activeHouse.Rooms);
         }
+        UserAuthService.SaveAllUsers();
     }
 
     private void OpenDevicePanel(Room room)

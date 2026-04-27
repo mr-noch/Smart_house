@@ -2,40 +2,57 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
         Width="1024" Height="600"
         x:Class="SmartHouseUI.GuiLogic.LoginWindow"
         Title="SmartHouseUI"
         WindowStartupLocation="CenterScreen">
 
-
-    <Grid Background="{DynamicResource PrimaryBackgroundGradient}" ColumnDefinitions="*, 300,*">
+    <Grid Background="{DynamicResource PrimaryBackgroundGradient}" ColumnDefinitions="*, 500,*">
         <Border Grid.Column="1" CornerRadius="12" Margin="20" Padding="20">
+            <Grid>
+                <Grid x:Name="LoginPanel">
+                    <Grid RowDefinitions="*, 400, *">
+                        <Border BorderBrush="white" BorderThickness="1" CornerRadius="30" Background="" Grid.Row="1" Padding="10" >
+                            <StackPanel>
+                                <Image Source="/Assets/Image/logo.png" Height="100" Width="100"/>
+                                <TextBlock Text="Welcome" Foreground="white" HorizontalAlignment="Center" Height="20" Width="60"/>
 
-            <Grid RowDefinitions="*, 400, *">
-                <Border BorderBrush="white" BorderThickness="1" CornerRadius="30" Background="" Grid.Row="1" Padding="10" >
+                                <TextBlock Text="Email address" Foreground="Gray" FontSize="8" Margin="0,10,0,5"/>
+                                <TextBox x:Name="EmailInput" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1" CornerRadius="100" />
 
-                    <StackPanel>
-                        <Image Source="/Assets/Image/logo.png" Height="100" Width="100"/>
-                        <TextBlock Text="Welcome" Foreground="white" HorizontalAlignment="Center" Height="20" Width="60"/>
+                                <TextBlock Text="Password" Foreground="Gray" FontSize="8" Margin="0,10,0,5"/>
+                                <TextBox x:Name="PasswordInput" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1" CornerRadius="100"/>
 
-                        <TextBlock Text="Email address" Foreground="Gray" FontSize="8" Margin="0,10,0,5"/>
-                        <TextBox x:Name="EmailInput" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1" CornerRadius="100" />
+                                <Button Click="OnForgotPasswordClick" Content="Forgot your password?" Background="Transparent" Foreground="Gray" FontSize="8" />
 
-                        <TextBlock Text="Password" Foreground="Gray" FontSize="8" Margin="0,10,0,5"/>
-                        <TextBox x:Name="PasswordInput" Background="Transparent" Watermark="" Width="" Margin="1" BorderBrush="white" BorderThickness="1" CornerRadius="100"/>
+                                <Button Click="OnLoginClick" Content="Login" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" FontSize="14" Background="Transparent" BorderBrush="white" BorderThickness="1" Margin="0,10,0,0" CornerRadius="100" />
+                                <TextBlock x:Name="ErrorText" Foreground="OrangeRed" FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                <Button Content="Don't you have an account?" Click="SignUpWindowButton_Click" Background="Transparent" Foreground="Gray" FontSize="8" HorizontalAlignment="Center" Margin="0,10,0,0" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Grid>
 
-                        <Button Content="Forgot your password?" Background="Transparent" Foreground="Gray" FontSize="8" />
+                <Border x:Name="ChooseHousePanel" Background="#1f1f21" CornerRadius="30" Padding="24" IsVisible="False">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Spacing="16">
+                            <TextBlock Text="Оберіть будинок" Foreground="White" FontSize="28" FontWeight="Bold" TextWrapping="Wrap"/>
+                            <TextBlock Text="Після входу оберіть свій будинок або будинок, до якого вам надали доступ." Foreground="LightGray" FontSize="14" TextWrapping="Wrap"/>
+                            <StackPanel x:Name="HousesPanel" Spacing="12"/>
 
-                        <Button Click="OnLoginClick" Content="Login" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" FontSize="14" Background="Transparent" BorderBrush="white" BorderThickness="1" Margin="0,10,0,0" CornerRadius="100" />
-                        <Button Content="Don't you have an account?" Click="SignUpWindowButton_Click" Background="Transparent" Foreground="Gray" FontSize="8" HorizontalAlignment="Center" Margin="0,10,0,0" />
-
-                    </StackPanel>
+                            <Border x:Name="GrantAccessPanel" Background="#2d2d30" CornerRadius="16" Padding="20" IsVisible="False">
+                                <StackPanel Spacing="12">
+                                    <TextBox x:Name="GrantEmailInput" Watermark="Email користувача" Background="Transparent" BorderBrush="Gray" BorderThickness="1" CornerRadius="8" Padding="10" Foreground="White"/>
+                                    <Button Content="Надати доступ" Click="GrantAccessClick" HorizontalAlignment="Stretch" Background="#2d89ef" Foreground="White" Padding="10"/>
+                                    <TextBlock x:Name="GrantStatusText" Foreground="LightGreen" FontSize="12" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Border>
             </Grid>
-
         </Border>
     </Grid>
-
 
 </Window>

@@ -18,6 +18,7 @@
                     <TextBox x:Name="DeviceNameInput" Watermark="Назва пристрою..."/>
                     <ComboBox x:Name="DeviceTypeComboBox" HorizontalAlignment="Stretch"/>
                     <Button Content="Додати пристрій" Click="AddDevice" HorizontalAlignment="Stretch" Background="#2d89ef" Foreground="White"/>
+                    <TextBlock x:Name="ErrorText" Foreground="OrangeRed" FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                 </StackPanel>
             </Border>
 
