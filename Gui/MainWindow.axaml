@@ -5,7 +5,8 @@
         xmlns:local="clr-namespace:SmartHouseUI.GuiLogic"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="900"
         Width="1024" Height="600"
-        Title="SmartHouseUI"        x:Class="SmartHouseUI.GuiLogic.MainWindow"
+        Title="SmartHouseUI"
+        x:Class="SmartHouseUI.GuiLogic.MainWindow"
 
         WindowStartupLocation="CenterScreen">
 
@@ -19,6 +20,7 @@
                                                 <Button Content="Освітлення" Foreground="white" HorizontalAlignment="Stretch"/>
                                                 <Button Content="Клімат" Foreground="white" HorizontalAlignment="Stretch"/>
                                                 <Button Content="Мультимедія" Foreground="white" HorizontalAlignment="Stretch"/>
+                                                <Button Click="ChooseHouse" Content="Безпека" Foreground="white" HorizontalAlignment="Stretch"/>
                                         </StackPanel>
 
                                         <Button Grid.Row="1" Click="LogOut">
@@ -85,12 +87,12 @@
                                                                 </StackPanel>
                                                         </Border>
                                                 </StackPanel>
-
                                         </StackPanel>
                                 </ScrollViewer>
                         </Border>
                 </Grid>
 
+                <local:ChooseHousePanel x:Name="ChooseHousePanelControl" Grid.Column="1" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Stretch" />
                 <local:AddRoomPanel x:Name="AddRoomPanelControl" IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <local:RoomDevicesPanel x:Name="RoomDevicesPanelControl" IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>

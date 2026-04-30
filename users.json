@@ -4,7 +4,7 @@
     "Name": "aefwef",
     "Role": "Admin",
     "Email": "1@a.com",
-    "Password": "123123",
+    "Password": "121212",
     "Rooms": [
       {
         "Name": "LivingRoom",
@@ -44,9 +44,27 @@
             "RoomType": "Bedroom"
           }
         ]
+      },
+      {
+        "Name": "efe",
+        "Type": "Bedroom",
+        "Devices": []
+      },
+      {
+        "Name": "sdc",
+        "Type": "Bedroom",
+        "Devices": []
+      },
+      {
+        "Name": "sd",
+        "Type": "Bedroom",
+        "Devices": []
       }
     ],
-    "AccessOwnerIds": []
+    "AccessOwnerIds": [
+      2,
+      3
+    ]
   },
   {
     "Id": 2,
@@ -95,6 +113,11 @@
       {
         "Name": "Bedroom",
         "Type": "Bedroom",
+        "Devices": []
+      },
+      {
+        "Name": "ds",
+        "Type": "Kitchen",
         "Devices": []
       }
     ],

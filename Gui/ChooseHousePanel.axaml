@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="824" d:DesignHeight="600"
+             Width="824" Height="600"
+             x:Class="SmartHouseUI.GuiLogic.ChooseHousePanel">
+
+
+
+
+    <Border x:Name="MainBorder" Background="{DynamicResource PrimaryBackgroundGradient}" Padding="20" IsVisible = "true" >
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+            <StackPanel Grid.Column="1" Spacing="16" >
+
+
+                <TextBlock Text="Оберіть будинок" Foreground="White" FontSize="28" FontWeight="Bold" TextWrapping="Wrap"/>
+                <TextBlock Text="Після входу оберіть свій будинок або будинок, до якого вам надали доступ." Foreground="LightGray" FontSize="14" TextWrapping="Wrap"/>
+                <StackPanel x:Name="HousesPanel" Spacing="12"/>
+
+                <Border x:Name="GrantAccessPanel" Background="#2d2d30" CornerRadius="16" Padding="20" >
+                    <StackPanel Spacing="12">
+                        <TextBox x:Name="GrantEmailInput" Watermark="Email користувача" Background="Transparent" BorderBrush="Gray" BorderThickness="1" CornerRadius="8" Padding="10" Foreground="White"/>
+                        <Button Content="Надати доступ" Click="GrantAccessClick" HorizontalAlignment="Stretch" Background="#2d89ef" Foreground="White" Padding="10"/>
+                        <TextBlock x:Name="GrantStatusText" Foreground="LightGreen" FontSize="12" TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                </Border>
+            </StackPanel>
+
+        </ScrollViewer>
+    </Border>
+</UserControl>

@@ -1,27 +1,40 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
-using SmartHouseUI.Models;
 using SmartHouseUI.Services;
+using SmartHouseUI.Models;
 using Avalonia.Media;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Avalonia.VisualTree;
 
 namespace SmartHouseUI.GuiLogic;
 
-public partial class ChooseHouse : Window
+public partial class ChooseHousePanel : UserControl
 {
-    private readonly UserAuthService _authService = new UserAuthService();
-
-    public ChooseHouse()
+    public ChooseHousePanel()
     {
         InitializeComponent();
         RenderHouseOptions();
         ConfigureGrantAccessPanel();
     }
+    private UserAuthService authService = new UserAuthService();
 
-    private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
+    private void ShowChooseHousePanel()
+    {
+        var loginPanel = this.FindControl<Grid>("LoginPanel");
+        var chooseHousePanel = this.FindControl<Border>("ChooseHousePanel");
 
+        if (loginPanel != null)
+            loginPanel.IsVisible = false;
+
+        if (chooseHousePanel != null)
+        {
+            chooseHousePanel.IsVisible = true;
+            RenderHouseOptions();
+            ConfigureGrantAccessPanel();
+        }
+    }
     private void RenderHouseOptions()
     {
         var housesPanel = this.FindControl<StackPanel>("HousesPanel");
@@ -48,7 +61,7 @@ public partial class ChooseHouse : Window
 
             foreach (var ownerId in currentUser.AccessOwnerIds)
             {
-                var owner = _authService.GetUserById(ownerId);
+                var owner = authService.GetUserById(ownerId);
                 if (owner == null)
                     continue;
 
@@ -56,7 +69,6 @@ public partial class ChooseHouse : Window
             }
         }
     }
-
     private Button CreateHouseButton(string text, User owner)
     {
         var button = new Button
@@ -79,9 +91,9 @@ public partial class ChooseHouse : Window
         UserSession.ActiveHouseOwner = owner;
         var mainWindow = new MainWindow();
         mainWindow.Show();
-        this.Close();
+        var parentWindow = this.GetVisualRoot() as Window;
+        parentWindow?.Close();
     }
-
     private void ConfigureGrantAccessPanel()
     {
         var grantPanel = this.FindControl<Border>("GrantAccessPanel");
@@ -108,8 +120,6 @@ public partial class ChooseHouse : Window
             return;
 
         string email = emailInput.Text?.Trim() ?? string.Empty;
-
-        // Validation
         string validationError = ValidateEmail(email);
         if (!string.IsNullOrEmpty(validationError))
         {
@@ -118,7 +128,7 @@ public partial class ChooseHouse : Window
             return;
         }
 
-        var targetUser = _authService.GetUserByEmail(email);
+        var targetUser = authService.GetUserByEmail(email);
         if (targetUser == null)
         {
             statusText.Foreground = Brushes.OrangeRed;
@@ -133,10 +143,11 @@ public partial class ChooseHouse : Window
             return;
         }
 
-        if (_authService.GrantHouseAccess(currentUser.Id, email))
+        if (authService.GrantHouseAccess(currentUser.Id, email))
         {
             statusText.Foreground = Brushes.LightGreen;
             statusText.Text = $"Доступ надано користувачу {targetUser.Name}.";
+            RenderHouseOptions();
         }
         else
         {
@@ -144,7 +155,6 @@ public partial class ChooseHouse : Window
             statusText.Text = "Доступ вже надано або сталася помилка.";
         }
     }
-
     private string ValidateEmail(string email)
     {
         if (string.IsNullOrWhiteSpace(email))

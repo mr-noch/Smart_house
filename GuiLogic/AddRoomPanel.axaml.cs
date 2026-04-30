@@ -3,10 +3,7 @@ using Avalonia.Interactivity;
 using SmartHouseUI.Services;
 using SmartHouseUI.Models;
 using System;
-using System.Linq;
-using System.Collections.Generic;
-using SmartHouseUI.GuiLogic;
-using Avalonia;
+
 using System.Text.RegularExpressions;
 
 namespace SmartHouseUI.GuiLogic;

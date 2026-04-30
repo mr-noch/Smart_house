@@ -1,20 +1,21 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="SmartHouseUI.GuiLogic.AddRoomPanel">
+             x:Class="SmartHouseUI.GuiLogic.AddRoomPanel"
+             >
 
-    <Border Background="#2d2d30" Width="250" Padding="20">
+    <Border Background="{DynamicResource PrimaryBackgroundGradient}" Width="250" Height="400" Padding="20">
         <StackPanel Spacing="15">
             <TextBlock Text="Додати кімнату" FontSize="18" Foreground="White" FontWeight="Bold"/>
 
-            <TextBox x:Name="RoomNameInput" Watermark="Назва кімнати..."/>
+            <TextBox x:Name="RoomNameInput" Watermark="Назва кімнати..." Foreground="lightgray"  Background="Transparent" BorderBrush="LightGray" BorderThickness="1" CornerRadius="8" Padding="10"/>
 
             <StackPanel Spacing="5">
-                <TextBlock Text="Тип кімнати:" FontSize="12" Foreground="Gray"/>
-                <ComboBox x:Name="TypeComboBox" HorizontalAlignment="Stretch">
+                <TextBlock Text="Тип кімнати:" FontSize="12" Foreground="White"/>
+                <ComboBox x:Name="TypeComboBox" Foreground="lightgray" FontSize="15" HorizontalAlignment="Stretch" Background="rgb(49, 55, 97)">
                 </ComboBox>
             </StackPanel>
 
-            <Button Content="Додати кімнату"  HorizontalAlignment="Stretch" Background="LightGray" Click="AddRoom"/>
+            <Button Content="Додати кімнату"  Foreground="lightgray" HorizontalAlignment="Stretch" Background="rgb(49, 55, 97)" Click="AddRoom"/>
             <TextBlock x:Name="ErrorText" Foreground="OrangeRed" FontSize="12" HorizontalAlignment="Center" Margin="0,5,0,0"/>
         </StackPanel>
 

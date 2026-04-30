@@ -45,6 +45,14 @@ public partial class MainWindow : Window
             }
         }
     }
+    private void ChooseHouse(object sender, RoutedEventArgs e)
+    {
+        var panel = this.FindControl<ChooseHousePanel>("ChooseHousePanelControl");
+        if (panel != null)
+        {
+            panel.IsVisible = true;
+        }
+    }
 
     private void AddRoom(object sender, RoutedEventArgs e)
     {
