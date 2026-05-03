@@ -48,6 +48,13 @@ public partial class MainWindow : Window
     private void ChooseHouse(object sender, RoutedEventArgs e)
     {
         var panel = this.FindControl<ChooseHousePanel>("ChooseHousePanelControl");
+        var musicPanel = this.FindControl<UserControl>("MusikPanelControl");
+
+        if (musicPanel != null)
+        {
+            musicPanel.IsVisible = false;
+        }
+
         if (panel != null)
         {
             panel.IsVisible = true;
@@ -57,9 +64,66 @@ public partial class MainWindow : Window
     private void AddRoom(object sender, RoutedEventArgs e)
     {
         var panel = this.FindControl<AddRoomPanel>("AddRoomPanelControl");
+        var musicPanel = this.FindControl<UserControl>("MusikPanelControl");
+
+        if (musicPanel != null)
+        {
+            musicPanel.IsVisible = false;
+        }
+
         if (panel != null)
         {
             panel.IsVisible = true;
+        }
+    }
+
+    private void OpenHome(object sender, RoutedEventArgs e)
+    {
+        var homeBorder = this.FindControl<Border>("HomeContentBorder");
+        var choosePanel = this.FindControl<ChooseHousePanel>("ChooseHousePanelControl");
+        var addRoomPanel = this.FindControl<AddRoomPanel>("AddRoomPanelControl");
+        var devicesPanel = this.FindControl<RoomDevicesPanel>("RoomDevicesPanelControl");
+        var musicPanel = this.FindControl<UserControl>("MusikPanelControl");
+
+        if (homeBorder != null)
+        {
+            homeBorder.IsVisible = true;
+        }
+
+        if (choosePanel != null)
+        {
+            choosePanel.IsVisible = false;
+        }
+
+        if (addRoomPanel != null)
+        {
+            addRoomPanel.IsVisible = false;
+        }
+
+        if (devicesPanel != null)
+        {
+            devicesPanel.IsVisible = false;
+        }
+
+        if (musicPanel != null)
+        {
+            musicPanel.IsVisible = false;
+        }
+    }
+
+    private void OpenMusic(object sender, RoutedEventArgs e)
+    {
+        var musicPanel = this.FindControl<UserControl>("MusikPanelControl");
+        var choosePanel = this.FindControl<ChooseHousePanel>("ChooseHousePanelControl");
+
+        if (choosePanel != null)
+        {
+            choosePanel.IsVisible = false;
+        }
+
+        if (musicPanel != null)
+        {
+            musicPanel.IsVisible = true;
         }
     }
 

@@ -16,11 +16,11 @@
                         <Border Grid.Column="0" Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
                                 <Grid RowDefinitions="*, auto">
                                         <StackPanel Grid.Row="0" Spacing="12">
-                                                <Button Content="Головна" Foreground="white" HorizontalAlignment="Stretch"/>
+                                                <Button Content="Головна" Foreground="white" HorizontalAlignment="Stretch" Click="OpenHome"/>
                                                 <Button Content="Освітлення" Foreground="white" HorizontalAlignment="Stretch"/>
                                                 <Button Content="Клімат" Foreground="white" HorizontalAlignment="Stretch"/>
-                                                <Button Content="Мультимедія" Foreground="white" HorizontalAlignment="Stretch"/>
-                                                <Button Click="ChooseHouse" Content="Безпека" Foreground="white" HorizontalAlignment="Stretch"/>
+                                                <Button Content="Мультимедія" Foreground="white" HorizontalAlignment="Stretch" Click="OpenMusic"/>
+                                                <Button Click="ChooseHouse" Content="Вибір будинку" Foreground="white" HorizontalAlignment="Stretch"/>
                                         </StackPanel>
 
                                         <Button Grid.Row="1" Click="LogOut">
@@ -29,7 +29,7 @@
                                 </Grid>
                         </Border>
 
-                        <Border Grid.Column="1" Background="{DynamicResource PrimaryBackgroundGradient}">
+                        <Border x:Name="HomeContentBorder" Grid.Column="1" Background="{DynamicResource PrimaryBackgroundGradient}">
                                 <ScrollViewer>
                                         <StackPanel Margin="20" Spacing="20">
 
@@ -93,6 +93,7 @@
                 </Grid>
 
                 <local:ChooseHousePanel x:Name="ChooseHousePanelControl" Grid.Column="1" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Stretch" />
+                <local:MusikPanel x:Name="MusikPanelControl" Grid.Column="1" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Stretch" />
                 <local:AddRoomPanel x:Name="AddRoomPanelControl" IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 <local:RoomDevicesPanel x:Name="RoomDevicesPanelControl" IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>

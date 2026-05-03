@@ -10,5 +10,6 @@ public class User
     public string? Password { get; set; }
     public List<Room> Rooms { get; set; } = new();
     public List<int> AccessOwnerIds { get; set; } = new();
+    public List<string> MusicFiles { get; set; } = new();
 }
 

@@ -14,7 +14,6 @@
 
             <StackPanel Grid.Column="1" Spacing="16" >
 
-
                 <TextBlock Text="Оберіть будинок" Foreground="White" FontSize="28" FontWeight="Bold" TextWrapping="Wrap"/>
                 <TextBlock Text="Після входу оберіть свій будинок або будинок, до якого вам надали доступ." Foreground="LightGray" FontSize="14" TextWrapping="Wrap"/>
                 <StackPanel x:Name="HousesPanel" Spacing="12"/>

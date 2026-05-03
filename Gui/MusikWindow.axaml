@@ -1,0 +1,55 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+             Width="824" Height="600"
+             x:Class="SmartHouseUI.GuiLogic.MusikPanel">
+
+    <Border x:Name="MainBorder" Background="{DynamicResource PrimaryBackgroundGradient}" Padding="20" IsVisible = "true" >
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid RowDefinitions="Auto, Auto, Auto, *">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Grid.Row="0">
+                    <Button Name="CloseMusicPanelButton" Content="Закрити" Click="ClosePanel_Click" Width="120"/>
+                </StackPanel>
+
+                <TextBlock Text="Музичний плеєр" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="1" Margin="0,10,0,10"/>
+
+                <StackPanel Orientation="Horizontal" Spacing="10" Grid.Row="2" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <Button Name="AddMusicButton" Content="Додати музику" Click="AddMusicButton_Click" Width="140" Foreground="White" />
+                    <Button Name="PlayButton" Content="Відтворити" Click="PlayButton_Click" Width="120" Foreground="White" />
+                    <Button Name="StopButton" Content="Зупинити" Click="StopButton_Click" Width="120" Foreground="White" />
+                </StackPanel>
+
+                <Grid Grid.Row="3" Margin="20,20,20,20" ColumnDefinitions="2*, 1*">
+
+                    <Border BorderBrush="#333333" BorderThickness="1" CornerRadius="12" Padding="10" Background="rgb(49, 55, 97)" >
+                        <StackPanel Grid.Column="0" Spacing="10" >
+                            <TextBlock Text="Доступні треки:" Foreground="White" FontSize="18" FontWeight="SemiBold"/>
+                            <ListBox Name="MusicList" Height="280" Background="transparent" />
+                            <Button Name="DeleteMusicButton" Content="Видалити трек" Click="DeleteMusicButton_Click" Width="140" Foreground="White" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+
+                    <StackPanel Grid.Column="1" Spacing="10" Margin="20,0,0,0">
+                        <TextBlock Text="Поточний трек:" Foreground="White" FontSize="16" FontWeight="SemiBold"/>
+                        <TextBlock Name="CurrentTrackText" Text="Немає треку" Foreground="White"/>
+
+                        <TextBlock Text="Статус:" Foreground="White" FontSize="16" FontWeight="SemiBold"/>
+                        <TextBlock Name="StatusText" Text="Очікує" Foreground="White"/>
+
+                        <TextBlock Text="Прогрес:" Foreground="White" FontSize="16" FontWeight="SemiBold"/>
+                        <Slider Name="MusicSlider" Minimum="0" Maximum="100" Value="0" Height="30"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="5">
+                            <TextBlock Name="CurrentTimeText" Text="00:00" Foreground="White"/>
+                            <TextBlock Text=" / " Foreground="White"/>
+                            <TextBlock Name="TotalTimeText" Text="00:00" Foreground="White"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Border>
+
+</UserControl>

@@ -46,17 +46,7 @@
         ]
       },
       {
-        "Name": "efe",
-        "Type": "Bedroom",
-        "Devices": []
-      },
-      {
-        "Name": "sdc",
-        "Type": "Bedroom",
-        "Devices": []
-      },
-      {
-        "Name": "sd",
+        "Name": "пап",
         "Type": "Bedroom",
         "Devices": []
       }
@@ -64,6 +54,9 @@
     "AccessOwnerIds": [
       2,
       3
+    ],
+    "MusicFiles": [
+      "/home/noch/Downloads/Neil Young Jam ｜ Cortez the Killer Guitar Backing Track (E Minor).mp3"
     ]
   },
   {
@@ -91,7 +84,8 @@
     ],
     "AccessOwnerIds": [
       1
-    ]
+    ],
+    "MusicFiles": []
   },
   {
     "Id": 3,
@@ -119,10 +113,16 @@
         "Name": "ds",
         "Type": "Kitchen",
         "Devices": []
+      },
+      {
+        "Name": "vb",
+        "Type": "Bedroom",
+        "Devices": []
       }
     ],
     "AccessOwnerIds": [
       1
-    ]
+    ],
+    "MusicFiles": []
   }
 ]
